@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export class AddTodo extends Component {
     state = {
@@ -11,10 +12,10 @@ export class AddTodo extends Component {
         });
     }
 
-    onSubmit =(e)=>{
+    onSubmit = (e) => {
         e.preventDefault();
         this.props.addTodo(this.state.title);
-        this.setState({title: ''})
+        this.setState({ title: '' })
     }
 
     render() {
@@ -25,7 +26,7 @@ export class AddTodo extends Component {
                     style={{ flex: '10', padding: '5px' }}
                     placeholder="Add Todo..."
                     value={this.state.title}
-                    onChange={this.onChange}></input>
+                    onChange={this.onChange} required></input>
                 <input type="submit"
                     value="Add"
                     className="btn"
@@ -33,6 +34,10 @@ export class AddTodo extends Component {
             </form>
         )
     }
+}
+
+AddTodo.propTypes = {
+    AddTodo: PropTypes.func.isRequired
 }
 
 export default AddTodo
