@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import AddTodo from './AddTodo';
 
 export class TodoItem extends Component {
     getStyle = () => {
